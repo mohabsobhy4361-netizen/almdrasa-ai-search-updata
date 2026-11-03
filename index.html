@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المدرسة – البحث الذكي في كل المنصة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0b1a;--card:#171428;--line:#2a2545;--tx:#f1eefc;--mut:#9d97bd;--pri:#5b1fff;--cy:#22d3ee;--hl:rgba(91,31,255,.25);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f3ff;--card:#fff;--line:#ddd6fe;--tx:#1e1b3a;--mut:#6b6690;--hl:rgba(91,31,255,.12);color-scheme:light}}
+:root[data-theme="dark"]{--bg:#0d0b1a;--card:#171428;--line:#2a2545;--tx:#f1eefc;--mut:#9d97bd;--hl:rgba(91,31,255,.25);color-scheme:dark}
+:root[data-theme="light"]{--bg:#f5f3ff;--card:#fff;--line:#ddd6fe;--tx:#1e1b3a;--mut:#6b6690;--hl:rgba(91,31,255,.12);color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Tahoma,Arial,sans-serif;line-height:1.7}
+.top{display:flex;align-items:center;gap:16px;padding:12px 5%;border-bottom:1px solid var(--line);flex-wrap:wrap;position:sticky;top:0;background:var(--bg);z-index:5}
+.logo{font-weight:800;font-size:24px}.logo b{color:var(--cy)}
+.nav{display:flex;gap:6px;flex:1}
+.nav button{background:none;border:0;color:var(--mut);font:inherit;padding:4px 12px;border-radius:8px;cursor:pointer}
+.nav button.on{background:var(--hl);color:var(--tx)}
+.gs{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);color:var(--mut);border-radius:99px;padding:6px 16px;font:inherit;font-size:14px;cursor:pointer;min-width:260px}
+.gs:hover{border-color:var(--pri);color:var(--tx)}
+.gs kbd{margin-inline-start:auto;font-size:11px;border:1px solid var(--line);border-radius:5px;padding:0 6px;direction:ltr}
+.wrap{max-width:1000px;margin:0 auto;padding:34px 5%}
+.pg{display:none}.pg.on{display:block}
+h1{font-size:clamp(28px,5vw,44px);margin:6px 0}h1 span{color:var(--cy)}
+.sub{color:var(--mut)}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}.stats div{flex:1;min-width:120px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}.stats b{display:block;font-size:22px}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:16px}
+.cc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.cc small{color:var(--cy)}
+.vid{aspect-ratio:16/9;background:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:14px 0}
+.vid i{width:120px;height:120px;border-radius:50%;background:var(--pri);display:block}
+.bar2{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;flex-wrap:wrap}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.btn.o{background:none;border:1px solid var(--pri);color:var(--tx)}
+.ov{position:fixed;inset:0;background:rgba(5,3,15,.72);display:none;z-index:20;overflow:auto;padding:4vh 4vw}
+.ov.on{display:block}
+.md{max-width:1050px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:18px}
+.sb{display:flex;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px}
+.sb input{flex:1;background:none;border:0;outline:0;color:var(--tx);font:inherit;font-size:17px;padding:8px 10px;min-width:0}
+.x{background:none;border:0;color:var(--mut);font-size:22px;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}
+.chip{background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:99px;padding:3px 14px;font:inherit;font-size:14px;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.gs{min-width:0;flex:1}}
+.res{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;cursor:pointer}
+.res:hover,.res.on{border-color:var(--pri)}
+.path{font-size:13px;color:var(--cy)}.res h3{margin:2px 0;font-size:17px}.res p{margin:4px 0;color:var(--mut);font-size:14px}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--mut)}
+.time{background:var(--pri);color:#fff;border-radius:6px;padding:0 8px;direction:ltr}
+.player{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;align-self:start}
+.screen{aspect-ratio:16/9;background:linear-gradient(135deg,#2a0f8f,#5b1fff);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;font-size:clamp(16px,2.2vw,21px);font-weight:600;color:#fff;position:relative}
+.screen small{position:absolute;top:8px;right:12px;font-size:12px;opacity:.8}
+.ctl{display:flex;align-items:center;gap:12px;padding:10px 14px;direction:ltr}
+.bar{flex:1;height:8px;background:var(--line);border-radius:9px;cursor:pointer;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--cy)}
+.pp{background:none;border:0;color:var(--tx);font-size:22px;cursor:pointer}
+.clock{font-size:13px;color:var(--mut);min-width:84px}
+.tr{padding:0 14px 12px;max-height:200px;overflow:auto}
+.ln{display:flex;gap:10px;padding:4px 8px;border-radius:8px;cursor:pointer;font-size:14px}
+.ln.cur{background:var(--hl)}.ln b{direction:ltr;color:var(--cy);min-width:44px}
+.empty{color:var(--mut);padding:26px;text-align:center}
+:root{--btn:#4a17f0;--btnh:#6d3dff;--g1:#b79dff;--g2:#6d3dff;--g3:#22d3ee}
+:root[data-theme="dark"]{--tx:#ffffff}
+:root[data-theme="light"]{--tx:#0a0912;--mut:#4d4868;--bg:#f6f4ff;--g1:#6d28d9;--g2:#4f2cff;--g3:#0891b2}
+*{transition:background-color .5s ease,color .5s ease,border-color .5s ease,box-shadow .4s ease,transform .3s ease}
+h1 span{background:linear-gradient(90deg,var(--g1),var(--g2) 50%,var(--g3));-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.btn{background:var(--btn)}
+.btn:hover{background:var(--btnh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(91,31,255,.45)}
+.btn.o{background:transparent;border:1px solid var(--line);color:var(--tx)}
+.btn.o:hover{background:var(--hl);border-color:var(--btnh);box-shadow:none}
+.gs:hover,.chip:hover{background:var(--hl);border-color:var(--btnh);color:var(--tx)}
+.nav button:hover{background:var(--hl);color:var(--tx)}
+.res:hover,.cc:hover{transform:translateY(-3px);border-color:var(--btnh)}
+</style>
+</head>
+<body>
+<div class="top">
+<div class="logo">المدرسة <b>&lt;/&gt;</b></div>
+<div class="nav"><button class="on" data-p="home">الرئيسية</button><button data-p="courses">الدورات</button><button data-p="lesson">الدرس</button></div>
+<button class="gs" data-open>🔍 <span>دوّر على أي معلومة في أي دورة</span><kbd>Ctrl K</kbd></button>
+</div>
+<div class="wrap">
+<div class="pg on" id="home"><h1>تعلّم البرمجة <span>بالعربية</span></h1><p class="sub">دوّر في كل الدورات من أي صفحة: زرار البحث فوق موجود دايماً.</p>
+<div class="stats"><div><b>+37 ألف</b>طالب وطالبة</div><div><b>+120 ألف</b>ساعة تعلّم</div><div><b>40</b>دورة في 4 مسارات</div></div></div>
+<div class="pg" id="courses"><h1>الدورات</h1><div class="cg"><div class="cc"><small>الفرونت إند</small><h3>JavaScript من الصفر</h3></div><div class="cc"><small>الفرونت إند</small><h3>CSS المتقدم</h3></div><div class="cc"><small>React</small><h3>أساسيات React</h3></div><div class="cc"><small>الباك إند</small><h3>JavaScript المتقدم</h3></div></div></div>
+<div class="pg" id="lesson"><h1>مقدمة الدورة</h1><div class="vid"><i></i></div>
+<div class="bar2"><button class="btn o">✓ مكتمل</button><button class="btn">✦ اسأل مساعد الدرس</button><button class="btn o" data-open>🔍 دوّر على أي معلومة في أي دورة</button></div></div>
+</div>
+<div class="ov" id="ov"><div class="md">
+<div class="sb"><input id="q" placeholder="اكتب أي معلومة: مثال، اشرح لي الـ function" autocomplete="off"><button class="btn" id="go">ابحث</button><button class="x" id="cl" aria-label="إغلاق">✕</button></div>
+<div class="chips" id="chips"></div>
+<div class="grid"><div id="out"><div class="empty">اكتب كلمة أو جملة، وهنوديك للفيديو والثانية اللي بيتشرح فيها الموضوع لأول مرة.</div></div>
+<div class="player"><div class="screen"><small id="vt"></small><span id="st">اختار نتيجة عشان يشتغل الفيديو</span></div>
+<div class="ctl"><button class="pp" id="pp">▶</button><div class="bar" id="bar"><i id="fill"></i></div><span class="clock" id="clk">0:00 / 0:00</span></div>
+<div class="tr" id="tr"></div></div></div></div></div>
+<script>
+var V={
+fn:{title:"الدوال في JavaScript",path:"الفرونت إند › JavaScript من الصفر",dur:600,lines:[[0,"أهلاً بيكم في الدرس، النهاردة هنكمل في أساسيات JavaScript."],[45,"قبل ما نبدأ، خلونا نراجع المتغيرات اللي أخدناها."],[120,"النهاردة هنشرح الـ function: يعني إيه دالة، ولازمتها إيه."],[190,"بنعرّف الدالة بكلمة function وبعدين اسمها وقوسين."],[300,"الـ return بترجّع قيمة من الدالة لمكان استدعائها."],[420,"وفيه كمان الـ arrow function، طريقة أقصر للكتابة."]]},
+loop:{title:"التكرار: for و while",path:"الفرونت إند › JavaScript من الصفر",dur:540,lines:[[0,"في الدرس ده هنتعلم نخلي الكود يعيد نفسه."],[60,"ليه بنحتاج الـ loop؟ عشان منكتبش نفس السطر مئة مرة."],[150,"حلقة for بتتكوّن من بداية وشرط وزيادة."],[300,"أما while فبتكرر طول ما الشرط متحقق."],[430,"وانتبه من الـ infinite loop لو الشرط مبيبقاش false."]]},
+state:{title:"الـ useState في React",path:"React › أساسيات React",dur:480,lines:[[0,"في الدرس ده هنفهم إزاي React بتتعامل مع البيانات المتغيرة."],[80,"الـ state هي بيانات الكومبوننت اللي لما تتغير الشاشة بتتحدث."],[170,"بنستخدم hook اسمه useState وبيرجّع القيمة ودالة التعديل."],[330,"متعدّلش الـ state مباشرة، استخدم دالة التعديل دايماً."]]},
+flex:{title:"Flexbox في CSS",path:"الفرونت إند › CSS المتقدم",dur:420,lines:[[0,"هنتعلم النهاردة طريقة ترتيب العناصر بسهولة."],[70,"أول خطوة نكتب display: flex على الأب."],[160,"justify-content بتتحكم في التوزيع الأفقي."],[260,"و align-items بتتحكم في المحاذاة الرأسية."]]},
+api:{title:"التعامل مع الـ API بـ fetch",path:"الباك إند › JavaScript المتقدم",dur:560,lines:[[0,"هنتعلم إزاي نجيب بيانات من سيرفر."],[100,"الـ API هو نقطة اتصال بين تطبيقك والسيرفر."],[210,"دالة fetch بترجع promise ونستخدم await عشان نستنى النتيجة."],[390,"ولازم نتعامل مع الأخطاء بـ try و catch."]]},
+arr:{title:"المصفوفات Arrays",path:"الفرونت إند › JavaScript من الصفر",dur:500,lines:[[0,"المصفوفة بتخزن مجموعة قيم في متغير واحد."],[90,"بنوصل لكل عنصر بالـ index وبيبدأ من صفر."],[240,"دوال زي push و map و filter بتسهّل الشغل."]]}
+};
+var KW={fn:["function","فانكشن","فنكشن","دالة","دوال","arrow","return"],loop:["loop","لوب","تكرار","for","while","حلقة","حلقات"],state:["state","usestate","ستيت","hook","هوك","react"],flex:["flex","flexbox","فلكس","ترتيب","align","justify"],api:["api","fetch","promise","await","سيرفر","server","async"],arr:["array","arrays","مصفوفة","مصفوفات","اراي","map","filter"]};
+var SUG=["اشرح لي الـ function","لوب","عايز اتعلم useState","إزاي أرتب العناصر؟","fetch data","array"];
+var $=function(i){return document.getElementById(i)};
+function norm(s){return s.toLowerCase().replace(/[\u064B-\u065F]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي")}
+function fmt(t){t=Math.floor(t);return Math.floor(t/60)+":"+("0"+t%60).slice(-2)}
+// البحث بيطابق على كلام الفيديو نفسه، وبيرجّع أول لحظة بيتذكر فيها الموضوع
+function search(q){
+ var n=norm(q),toks=n.split(/\s+/).filter(function(w){return w.length>2}),out=[];
+ Object.keys(V).forEach(function(id){
+  var ws=KW[id].filter(function(w){return n.indexOf(norm(w))>-1}),hit=null,score=ws.length*3;
+  V[id].lines.forEach(function(l){
+   var t=norm(l[1]),s=0;
+   ws.forEach(function(w){if(t.indexOf(norm(w))>-1)s+=4});
+   toks.forEach(function(w){if(t.indexOf(w)>-1)s+=1});
+   if(s>0&&!hit)hit={id:id,t:l[0],text:l[1]};
+   score+=s});
+  if(hit){hit.s=score;out.push(hit)}});
+ return out.sort(function(a,b){return b.s-a.s}).slice(0,4);
+}
+function render(q){
+ var r=search(q),o=$("out");
+ if(!r.length){o.innerHTML='<div class="empty">مفيش نتيجة مطابقة. جرّب كلمة تانية.</div>';return}
+ var top=r[0].s;
+ o.innerHTML=r.map(function(x,i){var v=V[x.id],pc=Math.max(55,Math.round(x.s/top*98));
+  return '<div class="res"><div class="path">'+v.path+'</div><h3>'+v.title+'</h3><p>'+x.text+'</p><div class="meta"><span>تطابق '+pc+'%</span><span class="time">'+fmt(x.t)+'</span></div></div>'}).join("");
+ var els=o.querySelectorAll(".res");
+ els.forEach(function(e,i){e.onclick=function(){els.forEach(function(z){z.classList.remove("on")});e.classList.add("on");load(r[i].id,r[i].t)}});
+ els[0].click();
+}
+var cur=null,pos=0,timer=null,playing=false;
+function load(id,t){cur=V[id];pos=t;$("vt").textContent=cur.title;
+ $("tr").innerHTML=cur.lines.map(function(l){return '<div class="ln" data-t="'+l[0]+'"><b>'+fmt(l[0])+'</b><span>'+l[1]+'</span></div>'}).join("");
+ $("tr").querySelectorAll(".ln").forEach(function(e){e.onclick=function(){pos=+e.dataset.t;draw()}});
+ draw();play(true)}
+function draw(){
+ if(!cur)return;
+ var idx=0;cur.lines.forEach(function(l,i){if(pos>=l[0])idx=i});
+ $("st").textContent=cur.lines[idx][1];
+ $("fill").style.width=(pos/cur.dur*100)+"%";
+ $("clk").textContent=fmt(pos)+" / "+fmt(cur.dur);
+ var rows=$("tr").querySelectorAll(".ln");
+ rows.forEach(function(r,i){r.classList.toggle("cur",i===idx)});
+ if(rows[idx])rows[idx].scrollIntoView({block:"nearest"});
+}
+function play(on){playing=on;$("pp").textContent=on?"❚❚":"▶";clearInterval(timer);
+ if(on)timer=setInterval(function(){pos+=1;if(pos>=cur.dur){pos=cur.dur;play(false)}draw()},1000)}
+$("pp").onclick=function(){if(cur)play(!playing)};
+$("bar").onclick=function(e){if(!cur)return;var r=this.getBoundingClientRect();pos=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*cur.dur;draw()};
+$("go").onclick=function(){if($("q").value.trim())render($("q").value)};
+$("q").onkeydown=function(e){if(e.key==="Enter")$("go").click()};
+$("chips").innerHTML=SUG.map(function(s){return '<button class="chip">'+s+'</button>'}).join("");
+$("chips").querySelectorAll(".chip").forEach(function(c){c.onclick=function(){$("q").value=c.textContent;$("go").click()}});
+function openS(){$("ov").classList.add("on");$("q").focus()}
+function closeS(){$("ov").classList.remove("on");play(false)}
+document.querySelectorAll("[data-open]").forEach(function(b){b.onclick=openS});
+$("cl").onclick=closeS;
+$("ov").onclick=function(e){if(e.target===this)closeS()};
+document.onkeydown=function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openS()}if(e.key==="Escape")closeS()};
+document.querySelectorAll(".nav button").forEach(function(b){b.onclick=function(){document.querySelectorAll(".nav button,.pg").forEach(function(z){z.classList.remove("on")});b.classList.add("on");$(b.dataset.p).classList.add("on")}});
+function setT(t){document.documentElement.setAttribute("data-theme",t)}
+var th="dark";setT(th);
+setInterval(function(){th=th==="dark"?"light":"dark";setT(th)},10000);
+</script>
+</body>
+</html>
